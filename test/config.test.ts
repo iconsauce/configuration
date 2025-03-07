@@ -1,7 +1,8 @@
-import { IconsauceConfig } from '../src/index'
-import { Config } from '../src/interface/config'
+import { IconsauceConfig } from '../src/index.js'
+import { Config } from '../src/interface/config.js'
 import path from 'path'
-import { configTest } from './fixtures/config'
+import { configTest } from './fixtures/config.js'
+import { jest } from '@jest/globals'
 
 describe('IconsauceConfig', () => {
   let config: Config
@@ -15,7 +16,7 @@ describe('IconsauceConfig', () => {
     expect(config.plugin.length).toEqual(configTest.plugin.length)
   })
   test('should loads a config when path setted', () => {
-    config = new IconsauceConfig(path.resolve(__dirname, './fixtures/iconsauce.config.js'))
+    config = new IconsauceConfig(path.resolve(process.cwd(), './test/fixtures/iconsauce.config.cjs'))
   })
   test('should loads a config when path is not provided', () => {
     const spyCwd = jest.spyOn(process, 'cwd')
