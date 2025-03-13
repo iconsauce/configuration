@@ -22,4 +22,4 @@ jobs:
       - name: Build
         run: npm run build
       - name: Run Tests
-        run: npm run test -- --maxWorkers=1
+        run: npm run test
