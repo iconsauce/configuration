@@ -19,4 +19,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: iconsauce/.github/.github/actions/setup-node@main
-      - run: npm run test
+      - run: npm run test -- --maxWorkers=3
